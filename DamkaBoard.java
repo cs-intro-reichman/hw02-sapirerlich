@@ -3,6 +3,24 @@
  */
 public class DamkaBoard {
 	public static void main(String[] args) {
-		//// Put your code here
+		Integer number = Integer.parseInt(args[0]);
+		int i = 0;
+		while (i<number){
+			int j = 0 ;
+			while (j < number){
+				System.out.print("* ");
+				j++;
+
+			}
+			System.out.println("");
+			if (i % 2 == 0 && i < (number-1)){
+				System.out.print(" ");
+			}
+			i++;
+
+		}
+
+		
+
 	}
 }

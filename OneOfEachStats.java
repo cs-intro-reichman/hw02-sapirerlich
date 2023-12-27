@@ -14,16 +14,57 @@ public class OneOfEachStats {
 		int seed = Integer.parseInt(args[1]);
 		// Initailizes a random numbers generator with the given seed value
         Random generator = new Random(seed);  
-		
-		//// In the previous version of this program, you used a statement like:
-		//// double rnd = Math.random();
-		//// Where "rnd" is the variable that stores the generated random value.
-		//// In this version of the program, replace this statement with:
-		//// double rnd = generator.nextDouble();
-		//// This statement will generate a random value in the range [0,1),
-		//// just like you had in the previous version, except that the 
-		//// randomization will be based on the given seed.
-		//// This is the only change that you have to do in the program.
+		// starting all counters
+		Integer all_childrens  = 0;
+		Integer two_child_fam = 0;
+		Integer three_child_fam = 0;
+		Integer four_plus_child_fam = 0;
+		String mode="";
+		// a loop that will run T times and generate the one of each stats 
+		for ( int i = 0 ; i < T ; i++){
+			boolean is_boy = false;
+			boolean is_girl = false;
+			int childrens=0;
+			double gender= generator.nextDouble();
+			// while there is only boys or only girls keep running
+			while (is_boy == false || is_girl == false) {
+				if (gender<0.5){
+						is_boy=true;
+						}
+				else{
+					is_girl=true;
+
+				}
+				gender= generator.nextDouble();
+				childrens++;
+			}
+			
+			all_childrens = all_childrens + childrens;
+			if (childrens==2){
+				two_child_fam++;
+			}
+			else if (childrens==3){
+				three_child_fam++;
+			}
+			else{
+				four_plus_child_fam++;
+			}
+		}
+		if (two_child_fam>=three_child_fam && two_child_fam>=four_plus_child_fam ){
+			mode="2";
+		}
+		else if (three_child_fam>=two_child_fam && three_child_fam>=four_plus_child_fam ){
+			mode="3";
+		}
+		else{
+			mode="4 or more.";
+		}
+		double avg_childrens = (double)all_childrens / T;
+		System.out.println("Average: "+avg_childrens+" children to get at least one of each gender.");
+		System.out.println("Number of families with 2 children: "+two_child_fam);
+		System.out.println("Number of families with 3 children: "+three_child_fam);
+		System.out.println("Number of families with 4 or more children: "+four_plus_child_fam);
+		System.out.println("The most common number of children is "+mode);
 		    
 	}
 }
