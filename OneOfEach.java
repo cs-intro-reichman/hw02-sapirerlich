@@ -9,8 +9,9 @@ public class OneOfEach {
 		boolean is_boy = false;
 		boolean is_girl = false;
 		int childrens=0;
-		Integer gender=(int)(Math.random()*2);
+		Integer gender;
 	while (is_boy == false || is_girl == false) {
+		gender=(int)(Math.random()*2);
 		if (gender==0){
 					is_boy=true;
 					System.out.print("b ");
@@ -19,7 +20,7 @@ public class OneOfEach {
 					is_girl=true;
 					System.out.print("g ");
 				}
-		gender=(int)(Math.random()*2);
+		
 		childrens++;
 	}
 	System.out.println();

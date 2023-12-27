@@ -11,20 +11,20 @@ public class OneOfEachStats1 {
 		Integer two_child_fam = 0;
 		Integer three_child_fam = 0;
 		Integer four_plus_child_fam = 0;
+		Integer gender;
 		String mode="";
 		for ( int i = 0 ; i < times ; i++){
 			boolean is_boy = false;
 			boolean is_girl = false;
 			int childrens=0;
-			Integer gender=(int)(Math.random()*2);
 			while (is_boy == false || is_girl == false) {
+				gender=(int)(Math.random()*2);
 				if (gender==0){
 							is_boy=true;
 						}
 						else{
 							is_girl=true;
 						}
-				gender=(int)(Math.random()*2);
 				childrens++;
 			}
 			

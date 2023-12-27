@@ -25,17 +25,17 @@ public class OneOfEachStats {
 			boolean is_boy = false;
 			boolean is_girl = false;
 			int childrens=0;
-			double gender= generator.nextDouble();
+			double gender;
 			// while there is only boys or only girls keep running
 			while (is_boy == false || is_girl == false) {
-				if (gender<0.5){
+				gender= generator.nextDouble();
+				if (gender<=0.5){
 						is_boy=true;
 						}
 				else{
 					is_girl=true;
 
 				}
-				gender= generator.nextDouble();
 				childrens++;
 			}
 			
@@ -60,6 +60,7 @@ public class OneOfEachStats {
 			mode="4 or more.";
 		}
 		double avg_childrens = (double)all_childrens / T;
+		System.out.println((double)all_childrens);
 		System.out.println("Average: "+avg_childrens+" children to get at least one of each gender.");
 		System.out.println("Number of families with 2 children: "+two_child_fam);
 		System.out.println("Number of families with 3 children: "+three_child_fam);
