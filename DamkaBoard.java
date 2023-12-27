@@ -8,7 +8,7 @@ public class DamkaBoard {
 		while (i<number){
 			int j = 0 ;
 			while (j < number){
-				System.out.print("* ");
+				System.out.print(" *");
 				j++;
 
 			}
