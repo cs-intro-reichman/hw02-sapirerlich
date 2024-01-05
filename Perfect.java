@@ -10,7 +10,8 @@ public class Perfect {
 			if (number % i == 0){
 				dividers_sum = dividers_sum + i;
 				perfect_output=perfect_output+" + "+i;
-
+				// to many blank lines
+				
 			}
 		}
 		
